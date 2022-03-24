@@ -1,0 +1,64 @@
+<head>
+  <link rel="stylesheet" href="index.css">
+  <script>
+    function validateFirstName() {
+      var firstName = document.forms["subscriber_form"]["fname"].value;
+      if (firstName == "") {
+        return "First name is required."
+      }
+
+      return;
+    }
+
+    function validateLastName() {
+      return;
+    }
+
+    function validateEmail() {
+      return;
+    }
+
+    function validateNumber() {
+      return;
+    }
+
+    function validateForm() {
+      errors = [];
+      const firstName = validateFirstName();
+      if (firstName) { errors.push(firstName) }
+
+      const lastName = validateLastName();
+      if (lastName) { errors.push(lastName) }
+      
+      const emailAddr = validateEmail();
+      if (emailAddr) { errors.push(emailAddr) }
+      
+      const phoneNumber = validateNumber()
+      if (phoneNumber) { errors.push(phoneNumber) }
+
+      if (errors.length > 0) {
+        alert(errors.join("\n"));
+      } else {
+        alert("Success!");
+      }
+      return false; 
+    }
+  </script>
+</head>
+
+<body class="Body-container">
+  <div class="Content-container">
+    <div class="Logo-container">
+      <img src="logo.svg" class="App-logo" alt="logo" />
+    </div>  
+    <div class="Form-container">
+      <form name="subscriber_form" class="Form-content" onsubmit="validateForm()">
+        <input class="Form-label" id="fname" name="fname" type="text" placeholder="Your first name,">
+        <input class="Form-label" id="lname" name="lname" type="text" placeholder="last name,">
+        <input class="Form-label" id="email" name="email" type="text" placeholder="email address,">
+        <input class="Form-label" id="cell" name="cell" type="cell" placeholder="and phone number.">
+        <input class="Form-button" type="submit" value="Subscribe">
+      </form>
+    </div>
+  </div>
+</body>
